@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+/**
+ * Solution to challenge.
+ */
+public class Solution {
+    // A list separator
+    private static final String LIST_SEPARATOR = " ";
+    
+    /**
+     * Main to solve challenge.
+     */
+    public static void main(String[] args) {
+        // Get the input
+        final Scanner console = new Scanner(System.in);
+
+        // Print starting banner
+        System.out.println("================================");
+        
+        // Print formated input
+        while(console.hasNextLine()) {
+            final String[] line = console.nextLine().split(LIST_SEPARATOR);
+            System.out.printf("%-15s%03d\n", line[0], Integer.parseInt(line[1]));
+        }
+        
+        // Print ending banner
+        System.out.println("================================");
+    }
+}

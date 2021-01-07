@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numoftests = sc.nextInt();
+        for (int i=0; i<numoftests; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int n = sc.nextInt();
+            int currentvalue = a;
+            for (int j=0; j<n; j++) {
+                currentvalue += Math.pow(2,j)*b;
+                if (j==n-1) {
+                    System.out.println(currentvalue + " ");
+                } else {
+                    System.out.print(currentvalue + " ");
+                }
+            }
+        }
+        
+    }
+}
