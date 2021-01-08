@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        int odddays=0;
+        Scanner in = new Scanner(System.in);
+        String month = in.next();
+        String day = in.next();
+        
+        String year = in.next();
+        int d1=Integer.parseInt(day);
+        int m1=Integer.parseInt(month);
+        int y1=Integer.parseInt(year);
+        y1-=1;
+        m1-=1;
+        int days[]={3,0,3,2,3,2,3,3,2,3,2,3};
+        int y4=(y1-2000)/4;
+        odddays+=(y4*5);
+        odddays+=y1%4;
+        for(int i=0;i<m1;i++)
+            {
+            odddays+=days[i];
+        }
+        if((y1+1)%4==0 && m1>=2) odddays+=1; 
+        odddays+=d1;
+        String dayarr[]={"SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"};
+        int t11=odddays%7;
+   //     System.out.println(t11);
+       System.out.println(dayarr[t11]);
+    }
+}
